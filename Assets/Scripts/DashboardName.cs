@@ -11,6 +11,7 @@ public class DashboardName : MonoBehaviour, IPointerClickHandler
     public TMP_Text textMeshProPage;
     private string nameObj;
     public GameObject ARview;
+    public GameObject ImageTarget;
     public void OnPointerClick(PointerEventData eventData)
     {
         
@@ -19,6 +20,10 @@ public class DashboardName : MonoBehaviour, IPointerClickHandler
         textMeshProPage.text = "İda’yı görmek için telefonu " + page*10 + ".sayfadaki İda’nın üzerine getir!";
         transform.parent.gameObject.SetActive(false);
         ARview.SetActive(true);
+        if (ImageTarget!=null)
+        {
+            ImageTarget.SetActive(true);
+        }
     }
 
     // Start is called before the first frame update
